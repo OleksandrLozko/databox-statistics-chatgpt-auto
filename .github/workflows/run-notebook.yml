@@ -10,20 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: ⬇️ Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: 🐍 Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.11
+        python-version: '3.11'
 
-    - name: Install dependencies
+    - name: 📦 Install dependencies
       run: |
-        pip install --upgrade pip
-        pip install openai slack_sdk gspread oauth2client nest_asyncio pyppeteer
+        pip install openai slack_sdk gspread oauth2client nest_asyncio pyppeteer nbconvert
 
-    - name: Execute notebook
-      uses: yaananth/run-python-notebook@v2
-      with:
-        notebook: Databox_Statistics_ChatGPT.ipyn 
+    - name: ▶️ Run notebook
+      run: |
+        jupyter nbconvert --to notebook --execute dashboard-analyzer.ipynb --output executed_notebook.ipynb

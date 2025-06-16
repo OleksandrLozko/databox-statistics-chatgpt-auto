@@ -1,26 +1,29 @@
-name: Run Notebook Daily
+name: Run Dashboard Analysis Notebook
 
 on:
-  schedule:
-    - cron: '0 7 * * *'  # everyday 8:00 AM UK time
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'  # 07:00 UTC 
 
 jobs:
-  run-notebook:
+  execute-notebook:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
 
-      - name: Install dependencies
-        run: |
-          pip install jupyter openai gspread oauth2client slack_sdk nest_asyncio pyppeteer
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install openai slack_sdk gspread oauth2client nest_asyncio pyppeteer
 
-      - name: Run notebook
-        run: |
-          jupyter nbconvert --to notebook --execute gpt_dashboard.ipynb --output output.ipynb --ExecutePreprocessor.timeout=600
+    - name: Execute notebook
+      uses: yaananth/run-python-notebook@v2
+      with:
+        notebook: Databox_Statistics_ChatGPT.ipyn 

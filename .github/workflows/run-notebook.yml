@@ -1,27 +1,34 @@
-name: Run Dashboard Analysis Notebook
+name: Run Jupyter Notebook
 
 on:
+  push:
+    paths:
+      - '**.ipynb'
   workflow_dispatch:
-  schedule:
-    - cron: '0 7 * * *'  # 07:00 UTC 
 
 jobs:
   execute-notebook:
     runs-on: ubuntu-latest
 
     steps:
-    - name: ⬇️ Checkout repository
-      uses: actions/checkout@v3
+      - name: 🔽 Checkout repository
+        uses: actions/checkout@v3
 
-    - name: 🐍 Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: 📦 Install dependencies
-      run: |
-        pip install openai slack_sdk gspread oauth2client nest_asyncio pyppeteer nbconvert
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install ipykernel
+          python -m ipykernel install --user --name=python3
 
-    - name: ▶️ Run notebook
-      run: |
-        jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb --output executed_notebook.ipynb
+      - name: 📁 List files
+        run: ls -la
+
+      - name: 🚀 Execute notebook
+        run: |
+          jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb --output executed_notebook.ipynb

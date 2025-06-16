@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "databox-statistics-chatgpt",
+  "private_key_id": "dbc04c8e17a1ddb8a338b52ff2d679730dd75038",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC58qz4RKK8pgCP\nlokEhkG+cGrROTDKglrwyNRsq6rs1jRVeOQUG6ZZJhf6Epjy6saKqH9Lh4KmWoOe\ngKUPtcSUScTJSaRA8gqtksTtM/xVZiG4/g5uhvKitB2KSNV2pzrPpuiC90hgf8vQ\n0rFjInj1WBiJAvxEBFYCCbLqCYMBkIl5qN4xGtnzPiy5d5zHFnpOSwkWnhOnEYBl\n6TCAtS1Wwam2F8tOyOjbMo3u88K5c6/DZqbGiS+jd0jkD/FE/n+Nm+obfpiscj6O\nOlZF4p5OBYMQ6r+TIcPTZyhctIS8JUZOVNMSjhp+6phemNaNVbTM/2zgmbQg8b+O\nW5lKDiA9AgMBAAECggEACuCjFS/grDPyxvOJpuHasTL+0Kftjn8jJkA9SvEc4ddi\n/tgAUZvPdpoXn3mciGNLA3v5XFf8QNJ9LhW88icSLZGGKTc9XE48aSxziCO5IF7F\n3L5B5l3PDk0GiFsb36HHOzP6mISyL3DyYZAdr9ypokKJxuQNkUYGqP5bwLyXNQ1f\nmnxa+WDQ29V5HMhFgKM8OAtXHN76WpaezQOFcFjXVAC+sNXIjLguqyNrkkwil5eH\nnbYeYpodsqtC7J2tFmS0UZvhJhZoqmTBFnvWKB1tY0MMEIhsz8P0wYuhiPE4VQ4J\nCf3hd5S+bcU2LIC9Spp4YSuItYsG/TEOs/D4bILYeQKBgQDtw31LDj0TXoivFxQP\nfPzJ4vNP9w3a3RbQ+SzW5RR/JRuxIo3smq15FzQFxqGm/DC4cM+zuzKNg88VIlYY\n8lo8VAFLic47ltYhG5hr/+bdVWtsZi88IgUKKr/9WI6+RvNq+H21l4SGk8pGutfk\n8UGS757SLu07JogwcOOJ1CnBNQKBgQDINcfZM4pw4aU3xS/D6vJATTCMhRsdwdnf\nYI+lqDrAvAkNfQUx7BDtTG1U4E5xbih1h1OVU7kKRjBq698GegUFyZd/RTXqAqJg\nX8pJw+7MmBUd9O/xRkqU7qhl4/YlZNw+mFZTL+83s2SRKX5qd4SzMSLYWx34ycv5\n7CCLKcAL6QKBgFL6XsfK+FXCMEGq9D1TiYWLxw6pUhSIBGZ6D8QPvs+Ay+FOBeoF\nMXWJO4aog9IbQYWdGV/IfSQWVDcz/IhITGWxi6IpPeheA+0aDF/kt1WXch4qq2F5\nHfkmYkqwlWCismEqx/SQJJgzC+0TWDV2XURCjFMePXzfPbhqLX70pH3hAoGAAbIK\n5jj8hCY1Cvrdg7A6qva8YYRDDYZ1vOGJdeKt1LIC9Z1IbPrNzeSmzGA16dn/97bU\nq2ARIhgkEtO6iMiBwGHLqaVBZqDtFRnakbNaE1t6Wk2Xtphcy1QWEv7SN9DZ2KHb\noUq3oOYhBOWwD2DBu+6/l8t1voSe+JfaUrNgz/kCgYEAvAUMT/B4YJzWcaNd0y3s\nu0iIEBw/hv28Lf0VxzwrXxMg2KQAeuYBMkMi4QR51zSpK9i2LkdGy5STC7A0GSn0\nU9AnZvK3xhygHDWMQjxFsFSNX9wmsvsxBUNeI/bvYWLR1ItrDBbxt6lrz10Di9/E\n4jcNUug+rI0niBUj9qoGkp0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "colab-access@databox-statistics-chatgpt.iam.gserviceaccount.com",
+  "client_id": "100378640331508867584",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/colab-access%40databox-statistics-chatgpt.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

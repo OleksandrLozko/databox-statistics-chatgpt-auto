@@ -25,16 +25,14 @@ jobs:
           pip install jupyter nbconvert ipykernel \
                       openai slack_sdk gspread oauth2client \
                       nest_asyncio pyppeteer
+          python -m ipykernel install --user --name=python3
 
-      - name: 🔑 Restore service account key
-        run: echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > databox-statistics-chatgpt.json
-        env:
-          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+      - name: 🔐 Create service account key file
+        run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > databox-statistics-chatgpt.json
 
       - name: 📁 List files
         run: ls -la
 
       - name: 🚀 Execute notebook
         run: |
-          jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb \
-            --output executed_notebook.ipynb --ExecutePreprocessor.kernel_name=python3
+          jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb --output executed_notebook.ipynb

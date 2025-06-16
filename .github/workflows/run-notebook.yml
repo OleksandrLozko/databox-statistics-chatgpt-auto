@@ -1,0 +1,26 @@
+name: Run Notebook Daily
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # everyday 8:00 AM UK time
+  workflow_dispatch:
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install jupyter openai gspread oauth2client slack_sdk nest_asyncio pyppeteer
+
+      - name: Run notebook
+        run: |
+          jupyter nbconvert --to notebook --execute gpt_dashboard.ipynb --output output.ipynb --ExecutePreprocessor.timeout=600

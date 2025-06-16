@@ -27,8 +27,9 @@ jobs:
                       nest_asyncio pyppeteer
           python -m ipykernel install --user --name=python3
 
-      - name: 🔐 Create service account key file
-        run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > databox-statistics-chatgpt.json
+      - name: 🔐 Decode service account key
+        run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" | base64 -d > databox-statistics-chatgpt.json
+
 
       - name: 📁 List files
         run: ls -la

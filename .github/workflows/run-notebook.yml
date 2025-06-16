@@ -26,6 +26,11 @@ jobs:
                       openai slack_sdk gspread oauth2client \
                       nest_asyncio pyppeteer
 
+      - name: 🔑 Restore service account key
+        run: echo "$GCP_SERVICE_ACCOUNT_KEY" | base64 -d > databox-statistics-chatgpt.json
+        env:
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
       - name: 📁 List files
         run: ls -la
 

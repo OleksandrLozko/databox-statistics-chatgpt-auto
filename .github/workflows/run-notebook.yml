@@ -24,4 +24,4 @@ jobs:
 
     - name: ▶️ Run notebook
       run: |
-        jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipyn --output executed_notebook.ipynb
+        jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb --output executed_notebook.ipynb

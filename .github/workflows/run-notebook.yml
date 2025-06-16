@@ -23,14 +23,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install jupyter nbconvert ipykernel \
-                    openai slack_sdk gspread oauth2client \
-                    nest_asyncio pyppeteer
-          pip install ipykernel
-          python -m ipykernel install --user --name=python3
+                      openai slack_sdk gspread oauth2client \
+                      nest_asyncio pyppeteer
 
       - name: 📁 List files
         run: ls -la
 
       - name: 🚀 Execute notebook
         run: |
-          jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb --output executed_notebook.ipynb
+          jupyter nbconvert --to notebook --execute Databox_Statistics_ChatGPT.ipynb \
+            --output executed_notebook.ipynb --ExecutePreprocessor.kernel_name=python3

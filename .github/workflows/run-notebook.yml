@@ -12,9 +12,6 @@ jobs:
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
     steps:
       - name: 🔽 Checkout repository
@@ -35,7 +32,6 @@ jobs:
 
       - name: 🔐 Decode service account key
         run: echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" | base64 -d > databox-statistics-chatgpt.json
-
 
       - name: 📁 List files
         run: ls -la

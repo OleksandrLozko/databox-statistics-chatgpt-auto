@@ -5,6 +5,8 @@ on:
     paths:
       - '**.ipynb'
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'
 
 jobs:
   execute-notebook:
